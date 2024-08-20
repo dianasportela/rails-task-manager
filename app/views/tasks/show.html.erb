@@ -1,0 +1,11 @@
+<h1><%= @task.title %></h1>
+
+<h2>Details</h2>
+
+<p><%= @task.details %></p>
+
+<%= link_to "See all tasks", tasks_path %>
+
+<%# Link to triggering DELETE request %>
+<%= link_to "Edit this task", edit_task_path(@task.id) %>
+<%= link_to "Remove this task", task_path(@task.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
